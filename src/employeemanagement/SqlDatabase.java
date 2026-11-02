@@ -8,7 +8,7 @@ public class SqlDatabase {
     public static SqlDatabase instance;
 
     private final String user = "avnadmin";
-    private final String sqlPassword = System.getenv("DB_PASSWORD");;
+    private final String sqlPassword = System.getenv("DB_PASSWORD");
     private final String url = "jdbc:mysql://sqlprojects-sqlprojects.g.aivencloud.com:25293/";
 
 
