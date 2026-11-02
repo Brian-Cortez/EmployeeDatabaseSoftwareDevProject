@@ -15,7 +15,7 @@ public final class LoginGUI
     
     //Credentials
     private String empID = "";
-    private String empPassword = "";
+    private char[] empPassword;
 
     private final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
     // x, y, width, height
@@ -90,9 +90,25 @@ public final class LoginGUI
     private void SetupButton() {
         submitButton.addActionListener((e) -> {
             //todo
+            if(textField.getText().isEmpty() || passwordField.getPassword().length == 0)
+            {
+                System.out.println("Please enter your credencials!");
+                return;
+            }
+            else
+            {
+                empID = textField.getText();
+                empPassword = passwordField.getPassword();
 
+                System.out.println(empID);
+                System.out.println(empPassword);
 
-            SqlDatabase.getInstance().ConnectToSql();
+                //login to sql database
+                SqlDatabase.getInstance().ConnectToSql(empID, empPassword);
+
+            }
+
+            
         });
     }
 
