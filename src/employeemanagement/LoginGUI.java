@@ -88,6 +88,7 @@ public final class LoginGUI
     }
 
     private void SetupButton() {
+        //lambda expression
         submitButton.addActionListener((e) -> {
             //todo
             if(textField.getText().isEmpty() || passwordField.getPassword().length == 0)
@@ -105,10 +106,7 @@ public final class LoginGUI
 
                 //login to sql database
                 SqlDatabase.getInstance().ConnectToSql(empID, empPassword);
-
             }
-
-            
         });
     }
 
