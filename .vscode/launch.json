@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Employee Management System",
+            "request": "launch",
+            "mainClass": "employeemanagement.Main",
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
