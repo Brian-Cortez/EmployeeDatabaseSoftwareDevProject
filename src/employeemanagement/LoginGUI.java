@@ -7,15 +7,17 @@ public final class LoginGUI
 {
     private JFrame windowFrame;
     private JPanel loginPanel;
-    private JTextField textField;
-    private JPasswordField passwordField;
+    protected  JTextField textField;
+    protected  JPasswordField passwordField;
     private JLabel employeeLabel;
+    protected JLabel errorOutputLabel;
     private JButton submitButton;
     private GridBagConstraints gbc; //adds a layout to the panel
+    private LoginError loginError;
     
     //Credentials
-    private String empID = "";
-    private char[] empPassword;
+    protected  String empID = "";
+    protected  char[] empPassword;
 
     private final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
     // x, y, width, height
@@ -84,30 +86,12 @@ public final class LoginGUI
         gbc.weightx = 1.0;
         loginPanel.add(submitButton, gbc);
 
-        SetupButton();
-    }
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        gbc.weightx = 1.0;
+        loginPanel.add(errorOutputLabel, gbc);
 
-    private void SetupButton() {
-        //lambda expression
-        submitButton.addActionListener((e) -> {
-            //todo
-            if(textField.getText().isEmpty() || passwordField.getPassword().length == 0)
-            {
-                System.out.println("Please enter your credencials!");
-                return;
-            }
-            else
-            {
-                empID = textField.getText();
-                empPassword = passwordField.getPassword();
-
-                System.out.println(empID);
-                System.out.println(empPassword);
-
-                //login to sql database
-                SqlDatabase.getInstance().ConnectToSql(empID, empPassword);
-            }
-        });
+        submitButton.addActionListener(loginError);
     }
 
     
@@ -118,6 +102,8 @@ public final class LoginGUI
         textField = new JTextField(textColumnSize);
         passwordField = new JPasswordField(textColumnSize);
         submitButton = new JButton("Submit");
+        loginError = new LoginError(this);
+        errorOutputLabel = new JLabel("");
         gbc = new GridBagConstraints();
     }
 
