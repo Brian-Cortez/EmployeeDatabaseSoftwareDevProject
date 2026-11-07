@@ -15,7 +15,6 @@ public class BaseDatabase{
     protected char[] empPassword;
 
     protected Statement myStmt;
-    protected ResultSet reault;
     protected ResultSet result;
 
     private SqlCommand commandDelegate;

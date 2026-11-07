@@ -65,8 +65,8 @@ public class LoginError implements ActionListener, SqlCommand{
             if(login.empID.equals(SqlDatabase.getInstance().result.getString("e.empID")) &&
                String.valueOf(login.empPassword).equals(SqlDatabase.getInstance().result.getString("e.empPassword")))
             {
-                //!Store the credencials
-                login.errorOutputLabel.setText("Successfully Stored ID and Password " + String.valueOf(login.empPassword) + login.empID);
+                
+                login.errorOutputLabel.setText("Logging in!");
                 break;
             }
             else if(SqlDatabase.getInstance().result.isLast())
