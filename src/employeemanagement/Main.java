@@ -1,6 +1,8 @@
 package employeemanagement;
 
 
+import java.awt.GridBagLayout;
+
 import javax.swing.SwingUtilities;
 
 public class Main
@@ -8,11 +10,7 @@ public class Main
     public static void main(String[] args)
     {
         SwingUtilities.invokeLater(() -> {
-            CreateLoginWindow();
+            ScreenManager.getInstance();
         });
-    }
-
-    private static LoginGUI CreateLoginWindow() {
-        return new LoginGUI();
     }
 }

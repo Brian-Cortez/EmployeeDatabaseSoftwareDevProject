@@ -3,10 +3,8 @@ package employeemanagement;
 
 import java.awt.*;
 import javax.swing.*;
-public final class LoginGUI
+public final class LoginGUI extends JPanel
 {
-    private JFrame windowFrame;
-    private JPanel loginPanel;
     protected  JTextField textField;
     protected  JPasswordField passwordField;
     private JLabel employeeLabel;
@@ -18,14 +16,10 @@ public final class LoginGUI
     //Credentials
     protected  String empID = "";
     protected  char[] empPassword;
-
-    private final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
-    // x, y, width, height
-    private final Rectangle WINDOWSIZE = new Rectangle(0, 0, SCREENSIZE.width, SCREENSIZE.height);
     private final int textColumnSize = 25;
     public LoginGUI()
     {
-        InitializeWindow();
+        this.setLayout(new GridBagLayout());
         LoadLoginGraphics();
     }
 
@@ -33,27 +27,13 @@ public final class LoginGUI
         Creates a new window of the rectangle size
         Sets the frame visible for the window frame to be seen
     */
-    private void InitializeWindow()
-    {
-        windowFrame = new JFrame("Employee Login");
-
-        windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        windowFrame.setBounds(WINDOWSIZE);
-
-        windowFrame.setLocationRelativeTo(null);
-
-        windowFrame.setVisible(true);
-
-    }
+    
 
     public void LoadLoginGraphics()
     {   
         InitComponents();
 
         SetupGrid();
-        
-        windowFrame.add(loginPanel);
     }
 
 
@@ -67,29 +47,29 @@ public final class LoginGUI
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.weightx = 1.0;
-        loginPanel.add(employeeLabel, gbc);
+        add(employeeLabel, gbc);
 
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.weightx = 1.0;
-        loginPanel.add(textField, gbc);
+        add(textField, gbc);
 
 
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.weightx = 1.0;
-        loginPanel.add(passwordField, gbc);
+        add(passwordField, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.weightx = 1.0;
-        loginPanel.add(submitButton, gbc);
+        add(submitButton, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.weightx = 1.0;
-        loginPanel.add(errorOutputLabel, gbc);
+        add(errorOutputLabel, gbc);
 
         submitButton.addActionListener(loginError);
     }
@@ -97,7 +77,6 @@ public final class LoginGUI
     
 
     private void InitComponents() {
-        loginPanel = new JPanel(new GridBagLayout());
         employeeLabel = new JLabel("Employee Login");
         textField = new JTextField(textColumnSize);
         passwordField = new JPasswordField(textColumnSize);

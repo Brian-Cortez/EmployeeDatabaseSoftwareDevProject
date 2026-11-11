@@ -67,6 +67,7 @@ public class LoginError implements ActionListener, SqlCommand{
             {
                 
                 login.errorOutputLabel.setText("Logging in!");
+                ScreenManager.getInstance().setPanel(EmployeeDashboard.getInstance());
                 break;
             }
             else if(SqlDatabase.getInstance().result.isLast())
