@@ -6,7 +6,11 @@ import javax.swing.JPanel;
 public class EmployeeDashboard extends JPanel implements BaseGraphics
 {
     public static EmployeeDashboard instance;
-    private JButton btn;
+
+    private JButton vpInfoBtn; //View Personal Information Button
+    private JButton vPayInfobtn; //View Pay History Button
+    private JButton vNewHireReport; //View New Hire Report
+
     public EmployeeDashboard() 
     {
         ShowGraphics();
@@ -23,10 +27,10 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
     @Override
     public void ShowGraphics() {
         InitComponents();
-        add(btn);
     }
     private void InitComponents()
     {
-        btn = new JButton("Click me!");
+        
+
     }
 }

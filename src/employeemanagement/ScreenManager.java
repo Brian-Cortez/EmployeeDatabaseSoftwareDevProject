@@ -35,8 +35,6 @@ public class ScreenManager
     public void InitializeWindow()
     {
         windowFrame = new JFrame("Employee Login");
-        System.out.println(windowFrame);
-
 
         windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -52,7 +50,6 @@ public class ScreenManager
     public void setPanel(JPanel panel)
     {
         //removes the old panel
-        System.out.println(windowFrame);
         windowFrame.remove(guiPanel);
 
         guiPanel = panel;
