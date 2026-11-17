@@ -9,7 +9,7 @@ import java.sql.Statement;
 public class BaseDatabase{
     protected final String user = "avnadmin";
     protected final String sqlPassword = System.getenv("DB_PASSWORD");
-    protected final String url = "jdbc:mysql://sqlprojects-sqlprojects.g.aivencloud.com:25293/employeeData2";
+    protected final String url = "jdbc:mysql://mysql-15ab85bd-briancortezunity-51ed.h.aivencloud.com:15934/employeeData2";
 
     protected String empID;
     protected char[] empPassword;
