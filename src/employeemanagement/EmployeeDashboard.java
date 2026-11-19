@@ -13,16 +13,11 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
 
     private JPanel fillPanel;
 
-    private Graphics g;
     private GridBagConstraints gbc;
-
-    private ScreenManager screenInstance;
 
     public EmployeeDashboard() 
     {
-        screenInstance = ScreenManager.getInstance();
         ShowGraphics();
-
     }
     public static EmployeeDashboard getInstance()
     {
@@ -37,7 +32,7 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
     @Override
     public void ShowGraphics() {
         InitComponents();
-
+        
         setLayout(new GridBagLayout());
 
         gbc = new GridBagConstraints();
@@ -85,6 +80,5 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
         vNewHireReport = new JButton("View New Hire Report");
 
         fillPanel = new JPanel();
-        fillPanel.setBackground(Color.red);
     }
 }
