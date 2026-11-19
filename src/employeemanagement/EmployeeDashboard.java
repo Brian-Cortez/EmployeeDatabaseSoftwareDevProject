@@ -27,8 +27,8 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
         }
         return instance;
     }
-    
 
+ 
  
     @Override
     public void ShowGraphics() {
@@ -76,21 +76,33 @@ public class EmployeeDashboard extends JPanel implements BaseGraphics
 
     private void InitComponents()
     {
-<<<<<<< HEAD
         vpInfoBtn = new JButton("View Personal Info");
         vPayInfobtn = new JButton("View Pay History");
         vNewHireReport = new JButton("View New Hire Report");
-=======
-        setLayout(new BorderLayout());
-
-        // ---------- buttons ----------
-        vpInfoBtn = new JButton("View Personal Information");
-        vPayInfobtn = new JButton("View Pay History");
-        vNewHireReport = new JButton("View New Hire Report");
-
-        
->>>>>>> origin/main
 
         fillPanel = new JPanel();
+
+
+        ButtonSetup();
     }
+    //
+    private void ButtonSetup() 
+    {
+        vpInfoBtn.addActionListener((e) ->{
+
+        });
+
+        vPayInfobtn.addActionListener((e) -> {
+
+        });
+
+        vNewHireReport.addActionListener((e) -> {
+
+            
+        });
+    }
+
+
+
+
 }
