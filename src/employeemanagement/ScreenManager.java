@@ -14,7 +14,7 @@ public class ScreenManager
 
     private final Dimension SCREENSIZE = Toolkit.getDefaultToolkit().getScreenSize();
     // x, y, width, height
-    private final Rectangle WINDOWSIZE = new Rectangle(0, 0, SCREENSIZE.width, SCREENSIZE.height);
+    protected final Rectangle WINDOWSIZE = new Rectangle(0, 0, SCREENSIZE.width, SCREENSIZE.height);
 
     public ScreenManager(JPanel panel)
     {   
